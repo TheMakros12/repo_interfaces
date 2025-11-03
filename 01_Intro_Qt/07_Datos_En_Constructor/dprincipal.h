@@ -13,12 +13,15 @@ public:
     DTransferencia *dTransferencia;
     QLabel *lblTransferencia = new QLabel;
 
+    QStringList listaCuentas;
+
 public slots:
     void slotLanzarDialogoTransferencia();
     void slotTransferenciaAceptada();
     void slotTransferenciaRechazada();
     void slotCantidadAceptada(float);
     void slotTransferenciaGorda(bool);
+    void slotActualizarCuentas();
 
 };
 

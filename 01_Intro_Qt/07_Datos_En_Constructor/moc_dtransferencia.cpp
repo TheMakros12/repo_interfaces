@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_DTransferencia_t {
-    QByteArrayData data[8];
-    char stringdata0[131];
+    QByteArrayData data[9];
+    char stringdata0[149];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,13 +39,14 @@ QT_MOC_LITERAL(3, 44, 24), // "senyalTransferenciaGorda"
 QT_MOC_LITERAL(4, 69, 10), // "activarBtn"
 QT_MOC_LITERAL(5, 80, 15), // "rechazarDialogo"
 QT_MOC_LITERAL(6, 96, 11), // "slotAceptar"
-QT_MOC_LITERAL(7, 108, 22) // "slotCantidadModificada"
+QT_MOC_LITERAL(7, 108, 22), // "slotCantidadModificada"
+QT_MOC_LITERAL(8, 131, 17) // "actualizarCuentas"
 
     },
     "DTransferencia\0senyalTransferenciaAceptada\0"
     "\0senyalTransferenciaGorda\0activarBtn\0"
     "rechazarDialogo\0slotAceptar\0"
-    "slotCantidadModificada"
+    "slotCantidadModificada\0actualizarCuentas"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,7 +56,7 @@ static const uint qt_meta_data_DTransferencia[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -63,14 +64,15 @@ static const uint qt_meta_data_DTransferencia[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   44,    2, 0x06 /* Public */,
-       3,    1,   47,    2, 0x06 /* Public */,
+       1,    1,   49,    2, 0x06 /* Public */,
+       3,    1,   52,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    1,   50,    2, 0x0a /* Public */,
-       5,    0,   53,    2, 0x0a /* Public */,
-       6,    0,   54,    2, 0x0a /* Public */,
-       7,    1,   55,    2, 0x0a /* Public */,
+       4,    1,   55,    2, 0x0a /* Public */,
+       5,    0,   58,    2, 0x0a /* Public */,
+       6,    0,   59,    2, 0x0a /* Public */,
+       7,    1,   60,    2, 0x0a /* Public */,
+       8,    1,   63,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Float,    2,
@@ -81,6 +83,7 @@ static const uint qt_meta_data_DTransferencia[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, QMetaType::QStringList,    2,
 
        0        // eod
 };
@@ -97,6 +100,7 @@ void DTransferencia::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 3: _t->rechazarDialogo(); break;
         case 4: _t->slotAceptar(); break;
         case 5: _t->slotCantidadModificada((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 6: _t->actualizarCuentas((*reinterpret_cast< QStringList(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -147,13 +151,13 @@ int DTransferencia::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }

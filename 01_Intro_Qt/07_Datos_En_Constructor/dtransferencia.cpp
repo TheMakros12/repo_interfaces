@@ -2,6 +2,7 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QHBoxLayout>
+#include <QComboBox>
 #include <QVBoxLayout>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
@@ -9,11 +10,15 @@
 #include "dtransferencia.h"
 #include <QDebug>
 
-DTransferencia::DTransferencia (QDialog *parent) : QDialog(parent) {
+DTransferencia::DTransferencia (QStringList listaCuentas, QDialog *parent) : QDialog(parent) {
 
     QLabel *lblDestino = new QLabel("Destino:  ");
     QLabel *lblCantidad = new QLabel("Cantidad:");
     QLabel *lblComision = new QLabel("Comisión: ");
+
+    cmbBoxCuentas = new QComboBox;
+    cmbBoxCuentas->addItems(listaCuentas);
+
     leDestino = new QLineEdit;
     leCantidad = new QLineEdit;
     btnAceptar = new QPushButton("Aceptar");
@@ -22,7 +27,8 @@ DTransferencia::DTransferencia (QDialog *parent) : QDialog(parent) {
 
     QHBoxLayout *layoutTextoDestino = new QHBoxLayout;
     layoutTextoDestino->addWidget(lblDestino);
-    layoutTextoDestino->addWidget(leDestino);
+    //layoutTextoDestino->addWidget(leDestino);
+    layoutTextoDestino->addWidget(cmbBoxCuentas);
     layoutTextoDestino->addWidget(btnAceptar);
 
     QHBoxLayout *layoutTextoCantidad = new QHBoxLayout;
@@ -107,4 +113,9 @@ void DTransferencia::rechazarDialogo() {
     if (!(btnAceptar->isEnabled()))
         reject();
 
+}
+
+void DTransferencia::actualizarCuentas(QStringList nuevaLista) {
+    cmbBoxCuentas->clear();
+    cmbBoxCuentas->addItems(nuevaLista);
 }
